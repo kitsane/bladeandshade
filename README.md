@@ -1,7 +1,6 @@
 # Blade and Shade
 
-This project contains the static site for [http://www.bladeandshade.ch](http://www.bladeandshade.ch) and
-The preview is available at [http://kitsane.github.io/bladeandshade/](http://kitsane.github.io/bladeandshade/) and
+This project contains the static site for [http://www.bladeandshade.ch](http://www.bladeandshade.ch), the preview is available at [http://kitsane.github.io/bladeandshade/](http://kitsane.github.io/bladeandshade/) and
 makes use of the following tools:
 
 * [Middleman](http://middlemanapp.com/) to generate the static web page.
