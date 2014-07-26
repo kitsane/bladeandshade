@@ -26,19 +26,26 @@
     .logo
       = image_tag 'logo_white.png'
 
-  .navbar
-    %ul
-      %li
-        %a.scroll-to{ href: '#piercings' } Piercings
-      %li
-        %a.scroll-to{ href: '#tattoos' } Tattoos
-      %li
-        %a.scroll-to{ href: '#team' } Team
-      %li
-        %a.scroll-to{ href: '#contact' } Kontakt
-      %li.brand
-        %a.scroll-to{ href: '#home' }
-          = image_tag 'logo_white.png'
+  .nav-wrapper
+    %nav.navbar.navbar-inverse{role: "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{ data: { target: ".collapse", toggle: "collapse" }, type: "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.scroll-to.navbar-brand{ href: '#home' }
+            = image_tag 'logo_white.png'
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li
+              %a.scroll-to{ href: '#piercings' } Piercings
+            %li
+              %a.scroll-to{ href: '#tattoos' } Tattoos
+            %li
+              %a.scroll-to{ href: '#team' } Team
+            %li
+              %a.scroll-to{ href: '#contact' } Kontakt
   .container
     .row
       .col-md-12

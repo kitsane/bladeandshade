@@ -1,14 +1,11 @@
+@import "compass/css3"
+
 $black: #000
 $white: #fff
 $grey: #95988e
 $navbar-height: 95px
 
-@font-face
-  font-family: 'Acid'
-  src: url('acid.eot')
-  src: url('acid.eot?#iefix') format("embedded-opentype"), url('acid.woff') format("woff"), url('acid.ttf') format("truetype"), url('acid.svg#acid') format("svg")
-  font-weight: normal
-  font-style: normal
++font-face("Acid", font-files("acid.ttf", "acid.eot", "acid.svg", "acid.woff"))
 
 body
   position: relative
@@ -16,23 +13,13 @@ body
   font-family: acid
 
 a
-  color: $black
   text-decoration: none
 
-  &:hover
-    color: $black
-    text-decoration: none
-
 .carousel
-  margin-bottom: $navbar-height
   height: 400px
 
   .item
-    -webkit-transition: opacity 1.5s
-    -moz-transition: opacity 1.5s
-    -ms-transition: opacity 1.5s
-    -o-transition: opacity 1.5s
-    transition: opacity 1.5s
+    +transition(opacity 1.5s)
 
   .active.left
     left: 0
@@ -84,55 +71,57 @@ a
   img
     width: 300px
 
-.navbar
-  height: $navbar-height
-  background-color: $black
-  text-align: center
-  position: absolute
-  top: 400px
-  width: 100%
-  z-index: 100
-
 .affix
+  width: 100%
   position: fixed
   top: 0
 
-  .brand
-    img
-      opacity: 1 !important
+  img
+    opacity: 1 !important
+
+.nav-wrapper
+  min-height: $navbar-height
+
 .navbar
+  background: #000
+  border: none
+  z-index: 1000
+
+  a.navbar-brand
+    width: 75px
+    height: 75px
+    padding: 10px 20px
+    img
+      opacity: 0
+      width: 75px
+      height: 75px
+      +transition(opacity 0.2s 0 ease)
+
   ul
-    margin: 0 auto
-    padding: 0
-    height: $navbar-height
+    color: $white
     font-size: 40px
+    padding: 0
+    list-style-type: none
 
     li
-      vertical-align: top
-      display: inline-block
-      list-style-type: none
-      padding: 26px 34px
-
-      &.brand
-        padding-top: 10px
-
-        img
-          width: 75px
-          -webkit-transition: opacity .5s
-          -moz-transition: opacity .5s
-          -ms-transition: opacity .5s
-          -o-transition: opacity .5s
-          transition: opacity .5s
-          opacity: 0
-    a
       color: $white
+      padding: 28px
 
-      &:hover
-        color: $white
+      a
+        padding: 0
+        margin: 0
 
-    img
-      width: 75px
+.navbar-toggle
+  padding: 20px
+  margin: 10px 15px
 
+  .icon-bar
+    width: 40px
+    height: 5px
+    border-radius: 4px
+
+    + .icon-bar
+      margin-top: 9px
 h1
   color: white
   text-align: center

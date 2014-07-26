@@ -1,34 +1,42 @@
 /*
  *= require './vendor/jquery-1.11.1.min'
  *= require bootstrap/affix
+ *= require bootstrap/scrollspy
  *= require bootstrap/transition
+ *= require bootstrap/collapse
  *= require bootstrap/carousel
  *= require_self
  */
 
 function scroller() {
-$('.scroll-to').click(function(event) {
+}
+
+$(document).ready(function() {
+  $('#carousel-header').carousel({
+    interval: 4000
+  })
+  $('nav').affix({
+    offset: { top: 400 }
+  })
+  $('body').scrollspy({
+    target: '.navbar'
+  });
+  $('.scroll-to').click(function(event) {
     event.preventDefault();
 
     var target = this.hash,
     $target = $(target);
 
+    if(target === '#home') {
+      $('.navbar').find('.active').removeClass('active')
+    }
+
     $('html, body').stop().animate({
       'scrollTop': $target.offset().top
     }, 500, 'swing');
+
+    $('body').each(function () {
+      $(this).scrollspy('refresh');
+    });
   });
-}
-
-$(document).ready(function() {
-  scroller();
-
-  $('#carousel-header').carousel({
-    interval: 4000
-  })
-
-  $('.navbar').affix({
-    offset: {
-      top: 400
-    }
-  })
 });
