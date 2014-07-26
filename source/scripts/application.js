@@ -8,9 +8,6 @@
  *= require_self
  */
 
-function scroller() {
-}
-
 $(document).ready(function() {
   $('#carousel-header').carousel({
     interval: 4000
@@ -21,15 +18,12 @@ $(document).ready(function() {
   $('body').scrollspy({
     target: '.navbar'
   });
+
   $('.scroll-to').click(function(event) {
     event.preventDefault();
 
     var target = this.hash,
     $target = $(target);
-
-    if(target === '#home') {
-      $('.navbar').find('.active').removeClass('active')
-    }
 
     $('html, body').stop().animate({
       'scrollTop': $target.offset().top
