@@ -12,9 +12,11 @@ $(document).ready(function() {
   $('#carousel-header').carousel({
     interval: 4000
   })
-  $('nav').affix({
+
+  $('nav, #carousel-header').affix({
     offset: { top: 400 }
   })
+
   $('body').scrollspy({
     target: '.navbar'
   });
