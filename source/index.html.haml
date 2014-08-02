@@ -22,83 +22,83 @@
       .item
         .carousel.image-container.team
 
-  .image-container.logo-container
-    .logo
-      = image_tag 'logo_white.png'
+    .image-container.logo-container
+      .logo
+        = image_tag 'logo/logo_white.png'
+  #page
+    .nav-wrapper
+      %nav.navbar.navbar-inverse{role: "navigation"}
+        .container
+          .navbar-header
+            %button.navbar-toggle{ data: { target: ".collapse", toggle: "collapse" }, type: "button"}
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            %a.scroll-to.navbar-brand{ href: '#home' }
+              = image_tag 'logo/logo_white.png'
+          .collapse.navbar-collapse
+            %ul.nav.navbar-nav
+              %li
+                %a.scroll-to{ href: '#piercings' } Piercings
+              %li
+                %a.scroll-to{ href: '#tattoos' } Tattoos
+              %li
+                %a.scroll-to{ href: '#team' } Team
+              %li
+                %a.scroll-to{ href: '#contact' } Kontakt
+    .container
+      .row
+        .col-md-12
+          %p
+            = lorem.paragraphs 2
 
-  .nav-wrapper
-    %nav.navbar.navbar-inverse{role: "navigation"}
-      .container
-        .navbar-header
-          %button.navbar-toggle{ data: { target: ".collapse", toggle: "collapse" }, type: "button"}
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.scroll-to.navbar-brand{ href: '#home' }
-            = image_tag 'logo_white.png'
-        .collapse.navbar-collapse
-          %ul.nav.navbar-nav
-            %li
-              %a.scroll-to{ href: '#piercings' } Piercings
-            %li
-              %a.scroll-to{ href: '#tattoos' } Tattoos
-            %li
-              %a.scroll-to{ href: '#team' } Team
-            %li
-              %a.scroll-to{ href: '#contact' } Kontakt
-  .container
-    .row
-      .col-md-12
-        %p
-          = lorem.paragraphs 2
+    .image-container.piercings
+      #piercings
+        .container-fluid
+          .row
+            %h1.no-bg
+              Piercings
+    .container
+      .row
+        .col-md-12
+          %p
+            = lorem.paragraphs 2
 
-  .image-container.piercings
-    #piercings
-      .container-fluid
-        .row
-          %h1.no-bg
-            Piercings
-  .container
-    .row
-      .col-md-12
-        %p
-          = lorem.paragraphs 2
+    .image-container.tattoos
+      #tattoos
+        .container-fluid
+          .row
+            %h1.no-bg
+              Tattoos
+    .container
+      .row
+        .col-md-12
+          %p
+            = lorem.paragraphs 2
 
-  .image-container.tattoos
-    #tattoos
-      .container-fluid
-        .row
-          %h1.no-bg
-            Tattoos
-  .container
-    .row
-      .col-md-12
-        %p
-          = lorem.paragraphs 2
+    .image-container.team
+      #team
+        .container-fluid
+          .row
+            %h1.no-border
+              Team
+    .container
+      .row
+        .col-md-12
+          %p
+            = lorem.paragraphs 2
 
-  .image-container.team
-    #team
-      .container-fluid
-        .row
-          %h1.no-border
-            Team
-  .container
-    .row
-      .col-md-12
-        %p
-          = lorem.paragraphs 2
+    .image-container.contact
+      #contact
+        .container-fluid
+          .row
+            %h1
+              Kontakt
+    .container
+      .row
+        .col-md-12
+          %p
+            = lorem.paragraphs 2
 
-  .image-container.contact
-    #contact
-      .container-fluid
-        .row
-          %h1
-            Kontakt
-  .container
-    .row
-      .col-md-12
-        %p
-          = lorem.paragraphs 2
-
-  #maps.image-container.maps
-    %iframe{frameborder: "0", height: "400", src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2718.460561322765!2d8.310225272658707!3d47.05081511849323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ffb98eca42783%3A0x58b06853404d567f!2sLuzern%2C+Bahnhof!5e0!3m2!1sde!2sch!4v1406211602135", style: "border:0", width: "100%"}
+    #maps.image-container.maps
+      %iframe{frameborder: "0", height: "400", src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2718.460561322765!2d8.310225272658707!3d47.05081511849323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ffb98eca42783%3A0x58b06853404d567f!2sLuzern%2C+Bahnhof!5e0!3m2!1sde!2sch!4v1406211602135", style: "border:0", width: "100%"}
