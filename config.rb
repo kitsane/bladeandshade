@@ -20,19 +20,19 @@ require 'bootstrap-sass'
 # Per-page layout changes:
 #
 # With no layout
-# page "/path/to/file.html", :layout => false
+# page '/path/to/file.html', :layout => false
 #
 # With alternative layout
-# page "/path/to/file.html", :layout => :otherlayout
+# page '/path/to/file.html', :layout => :otherlayout
 #
 # A path which all have the same layout
 # with_layout :admin do
-#   page "/admin/*"
+#   page '/admin/*'
 # end
 
 # Proxy (fake) files
-# page "/this-page-has-no-template.html", :proxy => "/template-file.html" do
-#   @which_fake_page = "Rendering a fake page with a variable"
+# page '/this-page-has-no-template.html', :proxy => '/template-file.html' do
+#   @which_fake_page = 'Rendering a fake page with a variable'
 # end
 
 ###
@@ -45,7 +45,7 @@ require 'bootstrap-sass'
 # Methods defined in the helpers block are available in templates
 # helpers do
 #   def some_helper
-#     "Helping"
+#     'Helping'
 #   end
 # end
 
