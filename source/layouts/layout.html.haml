@@ -1,0 +1,22 @@
+!!!
+%html{ lang: 'de' }
+  %head
+    %meta{:charset => 'utf-8'}
+    %meta{:content => 'IE=edge,chrome=1', 'http-equiv' => 'X-UA-Compatible'}
+
+    %title Blade & Shade
+
+    %meta{ content: '', name: 'description' }
+    %meta{ content: 'width=device-width, initial-scale=1', name: 'viewport' }
+
+    %link{ rel: 'apple-touch-icon', sizes: '152x152', href: 'apple-touch-icon-152x152-precomposed.png' }
+    %link{ rel: 'apple-touch-icon', href: 'apple-touch-icon-precomposed.png' }
+    %link{ rel: 'icon', type: 'image/ico', href: 'favicon.ico' }
+
+    %link{ rel: 'stylesheet', type: 'text/css', href: 'http://fonts.googleapis.com/css?family=Abel' }
+
+    = stylesheet_link_tag 'application'
+
+%body#home
+  = yield
+  = javascript_include_tag 'application'
