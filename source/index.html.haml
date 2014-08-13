@@ -1,5 +1,5 @@
 !!!
-%html.no-js{ lang: 'de' }
+%html{ lang: 'de' }
   %head
     %meta{:charset => 'utf-8'}
     %meta{:content => 'IE=edge,chrome=1', 'http-equiv' => 'X-UA-Compatible'}
@@ -17,22 +17,21 @@
     %link{ rel: 'shortcut icon', href: 'favicon.png' }
     %link{ rel: 'icon', type: 'image/ico', href: 'favicon.ico' }
 
+    %link{ rel: 'stylesheet', type: 'text/css', href: 'http://fonts.googleapis.com/css?family=Abel' }
+
     = stylesheet_link_tag 'application'
-    = javascript_include_tag 'application'
 
 %body#home
-  #carousel-header.carousel.slide
-    .carousel-inner
-      .item.active
-        .carousel.image-container.welcome
-      .item
-        .carousel.image-container.piercings
-      .item
-        .carousel.image-container.team
+  .container
+    .row
+      .carousel.slide
+        .carousel-inner
+          .item.active
+            = image_tag 'content/welcome.jpg'
 
-    .image-container.logo-container
-      .logo
-        = image_tag 'logo/logo_white.png'
+      .container.container-logo
+        .logo
+          = image_tag 'logo/logo_white.png'
   #page
     .nav-wrapper
       %nav.navbar.navbar-inverse{role: 'navigation'}
@@ -45,7 +44,7 @@
             %a.scroll-to.navbar-brand{ href: '#home' }
               = image_tag 'logo/logo_white.png'
           .collapse.navbar-collapse
-            %ul.nav.navbar-nav
+            %ul.nav.navbar-nav.navbar-right
               %li
                 %a.scroll-to{ href: '#piercings' } Piercings
               %li
@@ -56,57 +55,100 @@
                 %a.scroll-to{ href: '#contact' } Kontakt
     .container
       .row
-        .col-md-12
+        .entries
+          %h2 Leidenschaft
           %p
-            = lorem.paragraphs 2
+            treibt uns an.
+            %br
+            Wir wollen Dir den Körperschmuck bieten, den Du dir wünschst.
 
-    .image-container.piercings
-      #piercings
-        .container-fluid
-          .row
-            %h1.no-bg
-              Piercings
-    .container
+          %h2 Qualifikation
+          %p
+            und Erfahrung kannst Du von uns erwarten.
+
+          %h2 Hygiene
+          %p
+            ist uns wichtig.
+            %br
+            Wir arbeiten nach höchsten hygienischen Anforderungen
+
+          %h2 Perfektion
+          %p
+            ist unser Streben in allem was wir tun.
+            %br
+            Denn nur so erreichen wir Resultate die ein Leben lang glücklich
+            %br
+            machen und den Namen Schmuck verdienen.
+
+          %h2 Vertrauen
+          %p
+            gibst du uns - wir geben Dir dafür die volle Unterstützung.
+            %br
+            Vor, während und nach dem Piercen oder Tätowieren.
+
+          %h2 Anspruch
+          %p
+            führt zu Resultaten die unseren Kunden gerecht werden.
+            %br
+            Wir stellen höchste Ansprüche an unsere Arbeit,
+            %br
+            den verwendeten Materialen und Instrumenten.
+
+    #piercings.container
       .row
-        .col-md-12
-          %p
-            = lorem.paragraphs 2
+        = image_tag 'content/piercings.jpg'
+        %h1
+          Piercings
+        %p
+          Während eines persönlichen Beratungsgespräches gehen wir auf Deine Piercing oder Dermal Anchor Idee ein. Im Dialog erarbeiten wir einen konkreten Plan. Wir nehmen uns Zeit Dich ausführlich über mögliche Risiken aufzuklären. Ganz wichtig ist uns auch, Dich bei der richtigen Pflege des Piercings oder Dermal Anchors zu begleiten. Grundsätzlich piercen wir alle Stellen, an denen eine problemlose, schnelle Regeneration stattfindet.
+          %br
+          Für Piercings verwenden wir ausschliesslich Rein-Titan Schmuck von höchstem Qualitätsgrad. Somit ist eine Allergie oder Unverträglichkeit ausgeschlossen. Wir arbeiten nach den bestmöglichen hygienischen Standards. Jedes Instrument oder Utensil das mit Deinem Körper in Berührung kommt ist steril.
+          %br
+          In regelmässigen Weiterbildungen schulen wir uns, um Dir stets das bestmögliche Knowhow zu garantieren. Dadurch bieten wir Dir dank ausgereifter Techniken einen schmerzfreien Piercingvorgang.
+          %br
+          Das Mindestalter für ein Piercing beträgt 14 Jahre. Wir behalten wir uns vor zu entscheiden, welche Piercings wir durchführen und welche eventuell noch zu früh sind. Bei minderjährigen Personen ist das Beisein eines Erziehungsberechtigten zwingend.
+        .col-md-offset-4.col-md-4
+          .portrait
+            = link_to 'michi.html' do
+              = image_tag lorem.image('270x270')
+              Michael
 
-    .image-container.tattoos
-      #tattoos
-        .container-fluid
-          .row
-            %h1.no-bg
-              Tattoos
-    .container
+    #tattoos.container
       .row
-        .col-md-12
-          %p
-            = lorem.paragraphs 2
+        = image_tag 'content/tattoos.jpg'
+        %h1
+          Tattoos
+        %p
+          Während eines persönlichen Beratungsgespräches gehen wir auf Deine Piercing oder Dermal Anchor Idee ein. Im Dialog erarbeiten wir einen konkreten Plan. Wir nehmen uns Zeit Dich ausführlich über mögliche Risiken aufzuklären. Ganz wichtig ist uns auch, Dich bei der richtigen Pflege des Piercings oder Dermal Anchors zu begleiten. Grundsätzlich piercen wir alle Stellen, an denen eine problemlose, schnelle Regeneration stattfindet.
+          %br
+          Für Piercings verwenden wir ausschliesslich Rein-Titan Schmuck von höchstem Qualitätsgrad. Somit ist eine Allergie oder Unverträglichkeit ausgeschlossen. Wir arbeiten nach den bestmöglichen hygienischen Standards. Jedes Instrument oder Utensil das mit Deinem Körper in Berührung kommt ist steril.
+          %br
+          In regelmässigen Weiterbildungen schulen wir uns, um Dir stets das bestmögliche Knowhow zu garantieren. Dadurch bieten wir Dir dank ausgereifter Techniken einen schmerzfreien Piercingvorgang.
+          %br
+          Das Mindestalter für ein Piercing beträgt 14 Jahre. Wir behalten wir uns vor zu entscheiden, welche Piercings wir durchführen und welche eventuell noch zu früh sind. Bei minderjährigen Personen ist das Beisein eines Erziehungsberechtigten zwingend.
 
-    .image-container.team
-      #team
-        .container-fluid
-          .row
-            %h1.no-border
-              Team
-    .container
+    #team.container
       .row
-        .col-md-12
-          %p
-            = lorem.paragraphs 2
+        = image_tag 'content/team.jpg'
+        %h1
+          Team
+        %p
+          = lorem.paragraphs 2
 
-    .image-container.contact
-      #contact
-        .container-fluid
-          .row
-            %h1
-              Kontakt
-    .container
+    #contact.container
       .row
-        .col-md-12
+        = image_tag 'content/map.png'
+        %h1
+          Kontakt
+        %p
+          = lorem.paragraphs 1
+    %footer.container
+      .row
+        .footer.container
           %p
-            = lorem.paragraphs 2
+            = lorem.words 10
 
-    #maps.image-container.maps
-      %iframe{frameborder: '0', height: '400', src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2718.460561322765!2d8.310225272658707!3d47.05081511849323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478ffb98eca42783%3A0x58b06853404d567f!2sLuzern%2C+Bahnhof!5e0!3m2!1sde!2sch!4v1406211602135', style: 'border:0', width: '100%'}
+    .lemur
+      = image_tag 'content/lemur.png'
+
+    = javascript_include_tag 'application'
