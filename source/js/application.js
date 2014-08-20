@@ -18,7 +18,7 @@ $(document).ready(function() {
   });
   $('ul.nav.navbar-nav > li').click(function() {
     if($('.navbar-collapse.collapse').hasClass('in')) {
-      $('.navbar-collapse.collapse.in').removeClass('in')
+      $('button.navbar-toggle').click()
     }
   })
 
