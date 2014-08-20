@@ -16,6 +16,11 @@ $(document).ready(function() {
   $('body').scrollspy({
     target: '.navbar'
   });
+  $('ul.nav.navbar-nav > li').click(function() {
+    if($('.navbar-collapse.collapse').hasClass('in')) {
+      $('.navbar-collapse.collapse.in').removeClass('in')
+    }
+  })
 
   $('.scroll-to').click(function(event) {
     event.preventDefault();
