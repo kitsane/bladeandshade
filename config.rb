@@ -72,6 +72,7 @@ configure :build do
 
   # Use relative URLs
   activate :relative_assets
+  set :relative_links, true
 
   # Favicon generator
   activate :favicon_maker do |f|
