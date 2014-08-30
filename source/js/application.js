@@ -1,59 +1,55 @@
-/*
- *= require './vendor/jquery-1.11.1.min'
- *= require bootstrap/affix
- *= require bootstrap/scrollspy
- *= require bootstrap/transition
- *= require bootstrap/collapse
- *= require bootstrap/carousel
- *= require_self
- */
-
 $(document).ready(function() {
-  $('.carousel').carousel({
-    interval: 4000
-  })
+  var $carousel = $('.carousel')
 
-  $('body').scrollspy({
-    target: '.navbar'
-  });
-  $('ul.nav.navbar-nav > li').click(function() {
-    if($('.navbar-collapse.collapse').hasClass('in')) {
-      $('button.navbar-toggle').click()
-    }
-  })
+  $carousel.height(window.innerHeight-70)
+  $('.item').height(window.innerHeight-70)
+  $('.carousel-item').height(window.innerHeight-70)
+  $('.logo').height(window.innerHeight-70)
+
+  $carousel.carousel()
+
+  $('.gallery a').colorbox({rel:'gal', transition:"none", maxWidth:"75%", maxHeight:"75%", scrolling: false})
 
   $('.scroll-to').click(function(event) {
-    event.preventDefault();
+    event.preventDefault()
 
-    var target = this.hash,
-    $target = $(target);
+    var target = this.hash
+    var $target = $(target)
 
+    $('nav').find('.nav-active').removeClass('nav-active')
+    $("a[href='#"+$target.attr('id')+"']").first().addClass('nav-active')
     $('html, body').stop().animate({
-      'scrollTop': $target.offset().top
-    }, 500, 'swing');
-
-    $('body').each(function () {
-      $(this).scrollspy('refresh');
-    });
-  });
-});
-
-$(window).bind("load", function() {
-  $('nav').affix({
-    offset: { top: function () {
-        return (this.top = $('.carousel').height())
-      }
-    }
+      'scrollTop': $target.offset().top-70
+    }, 500, 'swing')
   })
 
   $(document).scroll(function () {
-    var scrollPositionY = $(this).scrollTop() + window.innerHeight
-    var footerPosition = $('footer').position().top+$('footer'). height()
+    var scrollPositionY = $(this).scrollTop()
+    var navigationPositionY = $('#navigation').offset().top
 
-    if (scrollPositionY >= footerPosition) {
-      $('.footer').addClass('fixed')
+    if (scrollPositionY >= navigationPositionY) {
+      $('nav').addClass('fixed-top')
+      $carousel.carousel('pause')
+      $('#navigation').addClass('no-background')
+      $('.brand img').css('opacity', '1')
     } else {
-      $('.footer').removeClass('fixed')
+      $('nav').removeClass('fixed-top')
+      $carousel.carousel()
+      $('#navigation').removeClass('no-background')
+      $('.brand img').css('opacity', '0')
     }
-  });
-});
+  })
+
+  if($('#footer').length > 0) {
+    $(document).scroll(function () {
+      var scrollPositionY = $(this).scrollTop() + window.innerHeight
+      var footerPositionY = $('#footer').position().top+$('#footer').height()
+
+      if (scrollPositionY >= footerPositionY) {
+        $('footer').addClass('fixed-bottom')
+      } else {
+        $('footer').removeClass('fixed-bottom')
+      }
+    })
+  }
+})

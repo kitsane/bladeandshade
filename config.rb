@@ -1,6 +1,3 @@
-require 'haml'
-require 'bootstrap-sass'
-
 ###
 # Compass
 ###
@@ -43,6 +40,8 @@ configure :development do
   activate :livereload
 end
 
+activate :autoprefixer
+
 # Methods defined in the helpers block are available in templates
 # helpers do
 #   def some_helper
@@ -66,7 +65,7 @@ configure :build do
   activate :minify_html
 
   # Enable cache buster
-  activate :asset_hash
+  # activate :asset_hash
 
   # Build with nice urls
   activate :directory_indexes
@@ -91,6 +90,7 @@ configure :build do
 
   # Activate gzip for text files
   activate :gzip
+
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"

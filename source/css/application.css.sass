@@ -1,60 +1,186 @@
-// Overrides
-$container-desktop:800px
-$container-large-desktop: 800px
+@import compass/css3/transition
+@import compass/utilities/general/clearfix
+@import compass/css3/animation
 
-$navbar-height: 75px
-$navbar-border-radius: 0
-$grid-float-breakpoint: 732px
+$black: #000
+$white: #fff
+$grey: #95988e
+$border-width: 5px
 
-// Core variables and mixins
-@import 'bootstrap/variables'
-@import 'bootstrap/mixins'
+body
+  font-size: 20px
+  font-family: 'Abel', Arial, Helvetica, Verdana, sans-serif
+  line-height: 1.65
+  margin: 0
+  padding: 0
 
-// Reset and dependencies
-@import 'bootstrap/normalize'
-// @import 'bootstrap/print'
-// @import 'bootstrap/glyphicons'
+ul
+  margin: 0
+  padding: 0
 
-// Core CSS
-@import 'bootstrap/scaffolding'
-// @import 'bootstrap/type'
-// @import 'bootstrap/code'
-@import 'bootstrap/grid'
-// @import 'bootstrap/tables'
-// @import 'bootstrap/forms'
-// @import 'bootstrap/buttons'
+.logo
+  position: absolute
+  width: 100%
+  z-index: -50
+  background: image-url("logo.svg") no-repeat center fixed
+  background-size: 280px
 
-// Components
-@import 'bootstrap/component-animations'
-// @import 'bootstrap/dropdowns'
-// @import 'bootstrap/button-groups'
-// @import 'bootstrap/input-groups'
-// @import 'bootstrap/navs'
-@import 'bootstrap/navbar'
-// @import 'bootstrap/breadcrumbs'
-// @import 'bootstrap/pagination'
-// @import 'bootstrap/pager'
-// @import 'bootstrap/labels'
-// @import 'bootstrap/badges'
-// @import 'bootstrap/jumbotron'
-// @import 'bootstrap/thumbnails'
-// @import 'bootstrap/alerts'
-// @import 'bootstrap/progress-bars'
-// @import 'bootstrap/media'
-// @import 'bootstrap/list-group'
-// @import 'bootstrap/panels'
-// @import 'bootstrap/responsive-embed'
-// @import 'bootstrap/wells'
-// @import 'bootstrap/close'
+.background
+  background-color: #fff
 
-// Components w/ JavaScript
-// @import 'bootstrap/modals'
-// @import 'bootstrap/tooltip'
-// @import 'bootstrap/popovers'
-@import 'bootstrap/carousel'
+.container
+  width: 800px
+  max-width: 100%
+  margin: 0 auto
 
-// Utility classes
-// @import 'bootstrap/utilities'
-@import 'bootstrap/responsive-utilities'
+.content
+  padding: 0 60px
 
-@import 'main'
+.profile-page
+  margin-bottom: 0 !important
+
+#navigation
+  @include transition(background .2s ease-in)
+  background: black
+  min-height: 70px
+
+nav
+  @include clearfix()
+  z-index: 100
+
+  .content
+    border-bottom: $border-width solid $white
+    background: black
+
+  .brand
+    margin: 5px
+    float: left
+    height: 55px
+    width: 55px
+
+    img
+      height: 55px
+      width: 55px
+      opacity: 0
+
+      &:hover
+        opacity: 1
+  .back
+    margin: 17px 0
+    float: left
+    height: 30px
+    opacity: .5
+
+    img
+      height: 30px
+  ul
+    text-align: right
+
+    li
+      display: inline
+      list-style-type: none
+
+      a
+        color: white
+        opacity: .5
+        text-decoration: none
+        display: inline-block
+        margin: 16px 0 16px 40px
+        &:hover
+          opacity: 1
+.teaser-img
+  max-width: 800px
+  width: 100%
+  display: block
+
+h1
+  text-align: center
+  font-size: 30px
+
+.title
+  color: white
+  background: $black
+  border-top: $border-width solid $white
+  padding: 10px 0
+  margin: 0
+
+.article
+  padding: 45px 0 120px
+
+.portrait
+  a
+    text-decoration: none
+    text-align: center
+    display: block
+    color: $black
+
+    img
+      width: 100%
+      max-width: 270px
+
+    span
+      display: block
+#welcome
+  p, h1
+    margin: 0
+    padding: 0
+  p
+    text-align: center
+    padding: 0 0 30px 0
+
+#footer
+  min-height: 135px
+
+footer
+  position: relative
+  border-top: $border-width solid $white
+  background: #000
+  max-width: 800px
+  width: 100%
+  height: 135px
+  color: #fff
+  font-size: 15px
+
+  .content
+    p
+      line-height: 2.5
+    img
+      float: right
+      width: 30px
+      margin-top: 12px
+
+.lemur
+  z-index: -1
+  max-width: 1000px
+  margin: -135px auto 0
+  padding-bottom: 135px
+  img
+    width: 100%
+
+.fixed-top
+  position: fixed
+  width: 100%
+  top: 0
+
+.fixed-bottom
+  position: fixed
+  width: 100%
+  bottom: 0
+
+.no-background
+  background: #fff !important
+
+.nav-active
+  opacity: 1
+
+.gallery
+  margin-left: -10px
+  margin-right: -10px
+
+  img
+    padding: 5px 10px
+    max-width: 213.3px
+    width: 100%
+
+.space
+  height: 30px

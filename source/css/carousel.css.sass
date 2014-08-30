@@ -1,0 +1,29 @@
+@import compass/css3/transition
+
+.carousel-inner
+  > .item
+    z-index: -100
+    position: fixed
+    top: 0
+    width: 100%
+    opacity: 0
+    @include transition(opacity 1.5s ease-in)
+
+  > .active
+    display: block
+    opacity: 1
+
+.carousel-item
+  background-size: cover !important
+  background: no-repeat center top fixed
+
+.carousel-1
+  background-image: image-url("carousel/carousel-1.jpg")
+.carousel-2
+  background-image: image-url("carousel/carousel-2.jpg")
+.carousel-3
+  background-image: image-url("carousel/carousel-3.jpg")
+.carousel-4
+  background-image: image-url("carousel/carousel-4.jpg")
+.carousel-5
+  background-image: image-url("carousel/carousel-5.jpg")

@@ -1,0 +1,35 @@
+#navigation
+  nav
+    .container
+      .content
+        = link_to '/', class: 'back' do
+          = image_tag 'chevron-left.svg', class: 'chevron-left'
+        ul
+          li
+            = link_to 'Piercings', '/#piercings'
+          li
+            = link_to 'Tattoos', '/#tattoos'
+          li
+            = link_to 'Kontakt', '/#contact'
+
+.container
+  = image_tag 'content/tattoos.jpg', class: 'teaser-img'
+  h1.title
+    'Otte Timar
+  .content
+    .article
+      p
+        = lorem.paragraphs 2
+      .gallery
+        = link_to '../img/portraits/otte-timar/original/ot-tattoo-1.jpg' do
+          = image_tag 'portraits/otte-timar/thumbnails/ot-tattoo-1.jpg'
+        = link_to '../img/portraits/otte-timar/original/ot-tattoo-2.jpg' do
+          = image_tag 'portraits/otte-timar/thumbnails/ot-tattoo-2.jpg'
+        = link_to '../img/portraits/otte-timar/original/ot-tattoo-3.jpg' do
+          = image_tag 'portraits/otte-timar/thumbnails/ot-tattoo-3.jpg'
+        = link_to '../img/portraits/otte-timar/original/ot-tattoo-4.jpg' do
+          = image_tag 'portraits/otte-timar/thumbnails/ot-tattoo-4.jpg'
+        = link_to '../img/portraits/otte-timar/original/ot-tattoo-5.jpg' do
+          = image_tag 'portraits/otte-timar/thumbnails/ot-tattoo-5.jpg'
+        = link_to '../img/portraits/otte-timar/original/ot-tattoo-6.jpg' do
+          = image_tag 'portraits/otte-timar/thumbnails/ot-tattoo-6.jpg'

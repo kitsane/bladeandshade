@@ -1,0 +1,35 @@
+#navigation
+  nav
+    .container
+      .content
+        = link_to '/', class: 'back' do
+          = image_tag 'chevron-left.svg', class: 'chevron-left'
+        ul
+          li
+            = link_to 'Piercings', '/#piercings'
+          li
+            = link_to 'Tattoos', '/#tattoos'
+          li
+            = link_to 'Kontakt', '/#contact'
+
+.container
+  = image_tag 'content/piercings.jpg', class: 'teaser-img'
+  h1.title
+    'Michi Koller
+  .content
+    .article
+      p
+        = lorem.paragraphs 2
+    .gallery
+      = link_to '../img/portraits/michi-koller/original/mk-piercing-1.jpg' do
+        = image_tag 'portraits/michi-koller/thumbnails/mk-piercing-1.jpg'
+      = link_to '../img/portraits/michi-koller/original/mk-piercing-2.jpg' do
+        = image_tag 'portraits/michi-koller/thumbnails/mk-piercing-2.jpg'
+      = link_to '../img/portraits/michi-koller/original/mk-piercing-3.jpg' do
+        = image_tag 'portraits/michi-koller/thumbnails/mk-piercing-3.jpg'
+      = link_to '../img/portraits/michi-koller/original/mk-piercing-4.jpg' do
+        = image_tag 'portraits/michi-koller/thumbnails/mk-piercing-4.jpg'
+      = link_to '../img/portraits/michi-koller/original/mk-piercing-5.jpg' do
+        = image_tag 'portraits/michi-koller/thumbnails/mk-piercing-5.jpg'
+      = link_to '../img/portraits/michi-koller/original/mk-piercing-6.jpg' do
+        = image_tag 'portraits/michi-koller/thumbnails/mk-piercing-6.jpg'
