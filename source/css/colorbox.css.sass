@@ -1,16 +1,18 @@
+@import compass/css3/transition
+
 #colorbox, #cboxOverlay
   position: absolute
   top: 0
   left: 0
   z-index: 9999
-  overflow: hidden
+  overflow: visible
 
 #cboxWrapper
   position: absolute
   top: 0
   left: 0
   z-index: 9999
-  overflow: hidden
+  overflow: visible
   max-width: none
 
 #cboxMiddleLeft, #cboxBottomLeft
@@ -101,7 +103,16 @@
 /* avoid outlines on :active (mouseclick), but preserve outlines on :focus (tabbed navigating)
 
 #cboxPrevious:active, #cboxNext:active, #cboxSlideshow:active, #cboxClose:active
-  outline: 0
+  outline: none
+
+#cboxPrevious, #cboxNext, #cboxClose
+  @include transition(opacity .5s ease-in)
+
+  &:focus
+    outline: none
+
+  &:hover
+    opacity: 1
 
 #cboxSlideshow
   position: absolute

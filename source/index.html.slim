@@ -1,4 +1,4 @@
-#home.section
+#home
   .logo
   .carousel
     .carousel-inner
@@ -18,7 +18,7 @@
     .container
       .content
         = link_to '#home', class: 'scroll-to brand' do
-          = image_tag 'logo.svg'
+          = image_tag 'logo.svg', style: 'width 55px; height: 55px'
         ul
           li
             = link_to 'Piercings', '/#piercings', class: 'scroll-to'
@@ -69,7 +69,7 @@
           br
           'den verwendeten Materialen und Instrumenten.
 
-  #piercings.section
+  #piercings
     = image_tag 'content/piercings.jpg', class: 'teaser-img'
     h1.title
       'Piercings
@@ -89,7 +89,7 @@
             span
               'Michi Koller
 
-  #tattoos.section
+  #tattoos
     = image_tag 'content/tattoos.jpg', class: 'teaser-img'
     h1.title
       'Tattoos
@@ -108,7 +108,7 @@
             = image_tag 'portraits/otte-timar.png'
             span
               'Otte Timar
-  #contact.section
+  #contact
     = image_tag 'content/map.png', class: 'teaser-img'
     h1.title
       'Kontakt

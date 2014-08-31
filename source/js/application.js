@@ -2,7 +2,8 @@ $(document).ready(function () {
   'use strict';
 
   var $carousel = $('.carousel'),
-      navbarHeight = $('nav').height(),
+      $nav = $('nav'),
+      navbarHeight = $nav.height(),
       windowHeight = window.innerHeight - navbarHeight;
 
   $carousel.height(windowHeight);
@@ -20,40 +21,41 @@ $(document).ready(function () {
     scrolling: false
   });
 
-  $('.scroll-to').click(function(event) {
+  $('.scroll-to').on('click', function(event) {
     event.preventDefault();
 
     var target = this.hash,
         $target = $(target);
 
-    $('nav').find('.nav-active').removeClass('nav-active');
-    $("a[href='#" + $target.attr('id') + "']").first().addClass('nav-active');
+    $nav.find('.nav-active').removeClass('nav-active')
+    $nav.find('a[href="/#' + $target.attr('id') + '"]').addClass('nav-active')
+
     $('html, body').stop().animate({
       'scrollTop': $target.offset().top - navbarHeight
     }, 500, 'swing');
   });
 
-  $(document).scroll(function () {
+  $(document).on('scroll', function () {
     var scrollPositionY = $(this).scrollTop(),
-        navigationPositionY = $('#navigation').offset().top;
+        navigationPositionY = $('#navigation').offset().top,
+        $navigation = $('#navigation'),
+        $brand = $('.brand')
 
     if (scrollPositionY >= navigationPositionY) {
-      $('nav').addClass('fixed');
+      $nav.addClass('fixed');
       $carousel.carousel('pause');
-      $('#navigation').addClass('no-background');
-      $('.brand').css('display', 'block');
-      $('.brand img').css('opacity', '.5');
+      $navigation.addClass('no-background');
+      $brand.addClass('visible');
     } else {
-      $('nav').removeClass('fixed');
+      $nav.removeClass('fixed');
       $carousel.carousel();
-      $('#navigation').removeClass('no-background');
-      $('.brand').css('display', 'none');
-      $('.brand img').css('opacity', '0');
+      $navigation.removeClass('no-background');
+      $brand.removeClass('visible');
     }
   });
 
   if($('#footer').length > 0) {
-    $(document).scroll(function () {
+    $(document).on('scroll', function () {
       var scrollPositionY = $(this).scrollTop() + window.innerHeight,
           footerPositionY = $('#footer').position().top + $('#footer').height();
 

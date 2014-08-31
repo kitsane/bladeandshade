@@ -57,20 +57,20 @@ nav
     height: 55px
     width: 55px
     display: none
+    @include transition(opacity .5s ease-in)
 
-    img
-      height: 55px
-      width: 55px
-      opacity: 0
-
-      &:hover
-        opacity: 1 !important
+    &:hover
+      opacity: 1
 
   .back
     margin: 17px 0
     float: left
     height: 30px
     opacity: .5
+    @include transition(opacity .5s ease-in)
+
+    &:hover
+      opacity: 1
 
     img
       height: 30px
@@ -88,6 +88,7 @@ nav
         text-decoration: none
         display: inline-block
         margin: 16px 0 16px 40px
+        @include transition(opacity .5s ease-in)
 
         &:hover
           opacity: 1
@@ -164,16 +165,6 @@ footer
   img
     width: 100%
 
-.fixed
-  position: fixed
-  width: 100%
-
-.no-background
-  background: #fff !important
-
-.nav-active
-  opacity: 1
-
 .gallery
   margin-left: -10px
   margin-right: -10px
@@ -185,3 +176,17 @@ footer
 
 .space
   height: 30px
+
+.fixed
+  position: fixed
+  width: 100%
+
+.no-background
+  background: #fff !important
+
+.nav-active
+  opacity: 1
+
+.visible
+  display: block !important
+  opacity: .5
