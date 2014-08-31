@@ -44,6 +44,7 @@ ul
 nav
   @include clearfix()
   z-index: 100
+  top: 0
   backface-visibility: hidden
 
   .content
@@ -55,6 +56,7 @@ nav
     float: left
     height: 55px
     width: 55px
+    display: none
 
     img
       height: 55px
@@ -62,7 +64,8 @@ nav
       opacity: 0
 
       &:hover
-        opacity: 1
+        opacity: 1 !important
+
   .back
     margin: 17px 0
     float: left
@@ -71,6 +74,7 @@ nav
 
     img
       height: 30px
+
   ul
     text-align: right
 
@@ -84,8 +88,10 @@ nav
         text-decoration: none
         display: inline-block
         margin: 16px 0 16px 40px
+
         &:hover
           opacity: 1
+
 .teaser-img
   max-width: 800px
   width: 100%
@@ -118,6 +124,7 @@ h1
 
     span
       display: block
+
 #welcome
   p, h1
     margin: 0
@@ -138,6 +145,7 @@ footer
   height: 135px
   color: #fff
   font-size: 15px
+  bottom: 0
 
   .content
     p
@@ -152,18 +160,13 @@ footer
   max-width: 1000px
   margin: -135px auto 0
   padding-bottom: 135px
+
   img
     width: 100%
 
-.fixed-top
+.fixed
   position: fixed
   width: 100%
-  top: 0
-
-.fixed-bottom
-  position: fixed
-  width: 100%
-  bottom: 0
 
 .no-background
   background: #fff !important
