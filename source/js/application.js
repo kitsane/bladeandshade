@@ -35,6 +35,24 @@ $(document).ready(function () {
     }, 500, 'swing');
   });
 
+  $('.toggler').on('click', function(event) {
+
+    $('nav .content').toggleClass('collapse')
+    $(this).css('opacity', 1)
+
+    if($(window).scrollTop() <= 219) {
+      $('html, body').stop().animate({
+        'scrollTop': 219
+      }, 500, 'swing');
+    }
+    if($('.collapse').length > 0) {
+      $('nav a').on('click', function() {
+        $('.collapse').removeClass('collapse')
+      })
+    }
+  })
+
+
   $(document).on('scroll', function () {
     var scrollPositionY = $(this).scrollTop(),
         navigationPositionY = $('#navigation').offset().top,

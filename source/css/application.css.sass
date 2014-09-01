@@ -50,9 +50,9 @@ nav
   .content
     border-bottom: $border-width solid $white
     background: black
-
+    height: 70px
   .brand
-    margin: 5px
+    margin: 7.5px 0
     float: left
     height: 55px
     width: 55px
@@ -75,6 +75,30 @@ nav
     img
       height: 30px
 
+  button
+    outline: none
+    display: none
+    float: right
+    margin: 7.5px 0
+    border: 2px solid #fff
+    height: 55px
+    background: transparent
+    padding: 0
+    border-radius: 8px
+    opacity: .5
+    @include transition(opacity .5s ease-in)
+
+    span
+      width: 45px
+      background: #fff
+      height: 4px
+      display: block
+      margin: 9.5px
+      border-radius: 4px
+
+    &:hover
+      opacity: 1
+
   ul
     text-align: right
 
@@ -87,7 +111,7 @@ nav
         opacity: .5
         text-decoration: none
         display: inline-block
-        margin: 16px 0 16px 40px
+        margin: 18.5px 0 18.5px 40px
         @include transition(opacity .5s ease-in)
 
         &:hover
@@ -190,3 +214,28 @@ footer
 .visible
   display: block !important
   opacity: .5
+@media (max-width: 600px)
+  nav
+    .content
+      @include transition(height .2s ease-in)
+      button
+        display: block
+
+      ul
+        text-align: left
+        padding-top: 70px
+        border-bottom: 5px solid #fff
+        margin: 0 -60px
+
+        li
+          display: block
+          border-top: 2px solid #fff
+          box-sizing: border-box
+
+          a
+            width: 100%
+            margin-left: 60px
+          &:first-child
+            border-top: 5px solid #fff
+.collapse
+  height: 289px !important
