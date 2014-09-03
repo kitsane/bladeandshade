@@ -4,7 +4,7 @@ $(document).ready(function () {
   var $carousel = $('.carousel'),
       $nav = $('nav'),
       navbarHeight = $nav.height(),
-      windowHeight = window.innerHeight - navbarHeight;
+      windowHeight = window.innerHeight - navbarHeight - 5;
 
   $carousel.height(windowHeight);
   $('.item').height(windowHeight);

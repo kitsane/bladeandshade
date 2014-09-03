@@ -91,7 +91,7 @@
           = link_to '/pages/michi-koller.html' do
             = image_tag 'portraits/michi-koller.png'
             span
-              'Michi Koller
+              'Michi
 
   #tattoos
     = image_tag 'content/tattoos.jpg', class: 'teaser-img'
@@ -111,21 +111,61 @@
           = link_to '/pages/otte-timar.html' do
             = image_tag 'portraits/otte-timar.png'
             span
-              'Otte Timar
+              'Otte
   #contact
-    = image_tag 'content/map.png', class: 'teaser-img'
+    a href='https://www.google.ch/maps/place/Ruopigenstrasse+8,+6015+Luzern/@47.  065191,8.2814781,17z/data=!4m2!3m1!1s0x478ffb5df344b5a5:0x3f6ea715eadd3899'               target='_blank'
+      = image_tag 'content/map.jpg', class: 'teaser-img'
     h1.title
       'Kontakt
     .content
       .article
-        p
-          = lorem.paragraphs 1
+        h3
+          'Eröffnungsdatum 16.9.14
+          br
+          'Party 27.9.14
+        .half
+          p.sub
+            'Adresse
+          p
+            a href='https://www.google.ch/maps/place/Ruopigenstrasse+8,+6015+Luzern/@47.065191,8.2814781,17z/data=!4m2!3m1!1s0x478ffb5df344b5a5:0x3f6ea715eadd3899' target='_blank'
+              'Ruopigenstrasse 8
+              br
+              '6015 Luzern
+              br
+              br
+            'T 041 260 00 52
+            br
+            a href='mail_to:info@bladeandshade.ch'
+              'info@bladeandshade.ch
+
+        .half
+          p.sub
+            'Öffnungszeiten
+          p
+            'Di / Mi / Fr
+            span
+              '11.30 - 18.30
+            br
+            'Do
+            span
+              '11.30 - 21.00
+            br
+            'Sa
+            span
+              '11.00 - 16.00
+            br
+            'So / Mo
+            span
+              'geschlossen
   #footer
     footer
       .content
-        =image_tag 'facebook.png'
+        a href='https://www.facebook.com/bladeshadeluzern' target='_blank'
+          =image_tag 'facebook.png'
         p
           'Design by Nahani Berke
+          br
+          'Fotos by Fabian & Livio Meyer
           br
           'Software by Gabor Raz
           br
