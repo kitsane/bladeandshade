@@ -17,8 +17,10 @@
   nav
     .container
       .content
-        = link_to '#home', class: 'scroll-to brand' do
-          = image_tag 'logo.svg', style: 'width 55px; height: 55px'
+        = link_to '#home', class: 'scroll-to brand', itemprop: 'name' do
+          span.home-text
+            'Blade and Shade GmbH
+          = image_tag 'logo.svg', style: 'width 55px; height: 55px', alt: 'Blade and Shade',  itemprop: 'logo'
         button.toggler
           span
           span
@@ -67,18 +69,18 @@
 
         h1 Anspruch
         p
-          'führt zu Resultaten die unseren Kunden gerecht werden.
+          'führt zu Resultaten die unseren Kunden gerecht werden.
           br
           'Wir stellen höchste Ansprüche an unsere Arbeit,
           br
           'den verwendeten Materialen und Instrumenten.
 
-  #piercings
+  #piercings itemprop='makesOffer' itemscope='' itemtype='http://schema.org/Offer'
     = image_tag 'content/piercings.jpg', class: 'teaser-img'
-    h1.title
+    h1.title itemprop='name'
       'Piercings
     .content
-      .article
+      .article itemprop='description'
         p
           'Während eines persönlichen Beratungsgespräches gehen wir auf Deine Piercing oder Dermal Anchor Idee ein. Im Dialog erarbeiten wir einen konkreten Plan. Wir nehmen uns Zeit Dich ausführlich über mögliche Risiken aufzuklären. Ganz wichtig ist uns auch, Dich bei der richtigen Pflege des Piercings oder Dermal Anchors zu begleiten. Grundsätzlich piercen wir alle Stellen, an denen eine problemlose, schnelle Regeneration stattfindet.
           br
@@ -93,12 +95,12 @@
             span
               'Michi
 
-  #tattoos
-    = image_tag 'content/tattoos.jpg', class: 'teaser-img'
-    h1.title
+  #tattoos itemprop='makesOffer' itemscope='' itemtype='http://schema.org/Offer'
+    = image_tag 'content/piercings.jpg', class: 'teaser-img'
+    h1.title itemprop='name'
       'Tattoos
     .content
-      .article
+      .article itemprop='description'
         p
           'Gerne besprechen wir mit Dir zusammen deine Tattoo Ideen und ergänzen Sie falls Du noch Unterstützung brauchst, bevor wir einen Termin machen. Es ist uns ganz wichtig dass dieser Dialog stattfindet damit Du absolute Sicherheit hast vor deinem Termin.
           br
@@ -112,8 +114,8 @@
             = image_tag 'portraits/otte-timar.png'
             span
               'Otte
-  #contact
-    a href='https://www.google.ch/maps/place/Ruopigenstrasse+8,+6015+Luzern/@47.065191,8.2814781,17z/data=!4m2!3m1!1s0x478ffb5df344b5a5:0x3f6ea715eadd3899' target='_blank'
+  #contact itemprop='location' itemscope=''  itemtype='http://schema.org/        PostalAddress'
+    a href='https://www.google.ch/maps/place/Ruopigenstrasse+8,+6015+Luzern/@47.065191,8.2814781,17z/data=!4m2!3m1!1s0x478ffb5df344b5a5:0x3f6ea715eadd3899' target='_blank' itemprop= 'hasMap'
       = image_tag 'content/map.jpg', class: 'teaser-img'
     h1.title
       'Kontakt
@@ -128,14 +130,19 @@
             'Adresse
           p
             a href='https://www.google.ch/maps/place/Ruopigenstrasse+8,+6015+Luzern/@47.065191,8.2814781,17z/data=!4m2!3m1!1s0x478ffb5df344b5a5:0x3f6ea715eadd3899' target='_blank'
-              'Ruopigenstrasse 8
+              span itemprop='streetAddress'
+                'Ruopigenstrasse 8
               br
-              '6015 Luzern
+                span itemprop='postalCode'
+                 '6015
+                span itemprop='addressLocality'
+                  'Luzern
               br
               br
-            'T 041 260 00 52
+            span itemprop='telephone'
+              'T 041 260 00 52
             br
-            a href='mail_to:info@bladeandshade.ch'
+            a href='mail_to:info@bladeandshade.ch' itemprop='email'
               'info@bladeandshade.ch
 
         .half
@@ -143,25 +150,25 @@
             'öffnungszeiten
           p
             'Di / Mi / Fr
-            span
+            span.open itemprop='openingHours' datetime='Tu, We, Fr 11:30-18:30'
               '11.30 - 18.30
             br
             'Do
-            span
+            span.open itemprop='openingHours' datetime='Th 11:30-21:00'
               '11.30 - 21.00
             br
             'Sa
-            span
+            span.open itemprop='openingHours' datetime='Sa 11:00-16:00'
               '11.00 - 16.00
             br
             'So / Mo
-            span
+            span.open
               'geschlossen
   #footer
     footer
       .content
-        a href='https://www.facebook.com/bladeshadeluzern' target='_blank'
-          =image_tag 'facebook.png'
+        a href='https://www.facebook.com/bladeshadeluzern' target='_blank' itemprop='sameAs'
+          = image_tag 'facebook.png'
         p
           'Design by Nahani Berke
           br
@@ -171,4 +178,6 @@
           br
           'Website by Andi Staub
 .lemur
-  =image_tag 'lemur.png'
+  = image_tag 'lemur.png'
+
+= partial 'conversion_tracking'
