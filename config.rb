@@ -87,7 +87,9 @@ configure :build do
   end
 
   # Image optimisation
-  activate :imageoptim
+  activate :imageoptim do |options|
+    options.svgo = false
+  end
 
   # Activate gzip for text files
   activate :gzip
