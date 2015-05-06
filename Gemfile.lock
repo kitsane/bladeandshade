@@ -163,6 +163,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  image_optim_pack
   middleman
   middleman-autoprefixer
   middleman-favicon-maker
