@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
 
-gem "middleman", "~>3.3.5"
+gem "middleman"
 
-gem "middleman-livereload", "~> 3.1.0"
-gem 'middleman-favicon-maker', '~> 3.7'
-gem 'middleman-imageoptim', '~> 0.1.4'
+gem "middleman-livereload"
+gem 'middleman-favicon-maker'
+gem 'middleman-imageoptim'
 gem 'middleman-minify-html'
 gem 'middleman-gh-pages'
 gem 'middleman-autoprefixer'
